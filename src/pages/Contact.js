@@ -18,59 +18,90 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-      setStatus({ success: false, message: 'Please fill in all fields.' });
-      return;
-    }
+  
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    setLoading(true);
-    setStatus({ success: null, message: '' });
+  if (
+    !formData.name ||
+    !formData.email ||
+    !formData.subject ||
+    !formData.message
+  ) {
+    setStatus({
+      success: false,
+      message: 'Please fill in all fields.'
+    });
+    return;
+  }
 
-    // Format new ticket item
-    const newTicket = {
-      id: 'TCK-' + Math.floor(100 + Math.random() * 900),
-      student: formData.name,
-      email: formData.email,
-      subject: formData.subject,
-      category: 'General Inquiry',
-      priority: 'Medium',
-      status: 'Open',
-      message: formData.message,
-      date: new Date().toISOString().split('T')[0]
-    };
+  setLoading(true);
+  setStatus({ success: null, message: '' });
 
-    let backendSuccess = false;
-
-    // 1. Try sending to backend if available
-    try {
-      const response = await axios.post(' https://ai-learning-backend-o3m1.onrender.com/api/contact', formData);
-      if (response.data && response.data.success) {
-        backendSuccess = true;
-      }
-    } catch (error) {
-      console.log('Backend contact route not reachable, storing ticket locally:', error.message);
-    }
-
-    // 2. Always persist ticket to localStorage so Admin Panel tickets tab shows it live!
-    try {
-      const existingTickets = JSON.parse(localStorage.getItem('admin_tickets') || '[]');
-      existingTickets.unshift(newTicket);
-      localStorage.setItem('admin_tickets', JSON.stringify(existingTickets));
-    } catch (e) {
-      console.error('Error saving ticket:', e);
-    }
-
-    setTimeout(() => {
-      setLoading(false);
-      setStatus({
-        success: true,
-        message: '🎉 Thank you! Your support ticket has been created and sent to our team. Ticket ID: ' + newTicket.id
-      });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 600);
+  const newTicket = {
+    id: 'TCK-' + Math.floor(100 + Math.random() * 900),
+    student: formData.name,
+    email: formData.email,
+    subject: formData.subject,
+    category: 'General Inquiry',
+    priority: 'Medium',
+    status: 'Open',
+    message: formData.message,
+    date: new Date().toISOString().split('T')[0]
   };
+
+  // Try sending the ticket to the backend.
+  try {
+  const response = await axios.post(
+    'https://ai-learning-backend-o3m1.onrender.com/api/contact',
+    formData
+  );
+
+  if (response.data && response.data.success) {
+    console.log('Contact ticket sent successfully.');
+  }
+} catch (error) {
+  console.log(
+    'Backend contact route not reachable, storing ticket locally:',
+    error.message
+  );
+}
+
+  // Save the ticket locally for the Admin Panel.
+  try {
+    const existingTickets = JSON.parse(
+      localStorage.getItem('admin_tickets') || '[]'
+    );
+
+    existingTickets.unshift(newTicket);
+
+    localStorage.setItem(
+      'admin_tickets',
+      JSON.stringify(existingTickets)
+    );
+  } catch (error) {
+    console.error('Error saving ticket:', error);
+  }
+
+  setTimeout(() => {
+    setLoading(false);
+
+    setStatus({
+      success: true,
+      message:
+        '🎉 Thank you! Your support ticket has been created. Ticket ID: ' +
+        newTicket.id
+    });
+
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
+  }, 600);
+};
+
 
   return (
     <div className="contact-page-wrapper">

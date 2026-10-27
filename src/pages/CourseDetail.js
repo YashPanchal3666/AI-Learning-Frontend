@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../styles/courseDetail.css';
-import courseDetailData, { getCourseDetail } from '../data/courseDetailData';
-import { enrollInCourse, isUserEnrolled, getCurrentUserEmail } from '../services/learningService';
+import { getCourseDetail } from '../data/courseDetailData';
+import {
+    enrollInCourse,
+    getCurrentUserEmail
+} from '../services/learningService';
 import { 
     FaStar, FaClock, FaUsers, FaPlay, FaCheck, 
     FaFileAlt, FaCertificate, FaChevronDown, 
@@ -26,7 +29,6 @@ const fallbackImages = {
 const CourseDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const [enrolled, setEnrolled] = useState(false);
     const [showSuccessToast, setShowSuccessToast] = useState(false);
     const [expandedModules, setExpandedModules] = useState({ 0: true });
     const [imgSrc, setImgSrc] = useState(null);
