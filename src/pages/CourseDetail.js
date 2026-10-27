@@ -118,7 +118,6 @@ const CourseDetail = () => {
                     enrollInCourse(courseData.id);
                     setPaying(false);
                     setShowPayModal(false);
-                    setEnrolled(true);
                     setShowSuccessToast(true);
                     setTimeout(() => {
                         navigate(`/learn/${id || 'ai-1'}`);
@@ -164,7 +163,6 @@ const CourseDetail = () => {
             enrollInCourse(courseData.id);
             setPaying(false);
             setShowPayModal(false);
-            setEnrolled(true);
             setShowSuccessToast(true);
             setTimeout(() => {
                 navigate(`/learn/${id || 'ai-1'}`);
