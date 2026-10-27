@@ -1,0 +1,647 @@
+.course-detail-page {
+    min-height: 100vh;
+    background: #f8fafc;
+    padding-bottom: 80px;
+}
+
+/* Hero Section */
+.course-detail-hero {
+    background: linear-gradient(135deg, #0f172a, #1e1b4b);
+    color: #ffffff;
+    padding: 70px 6%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-glow-blob {
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 380px;
+    height: 380px;
+    background: rgba(99, 102, 241, 0.25);
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+}
+
+.detail-hero-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.8fr 1.2fr;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.detail-hero-left {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.category-pill {
+    align-self: flex-start;
+    padding: 6px 16px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: #38bdf8;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.detail-hero-left h1 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.detail-hero-left p {
+    font-size: 16px;
+    color: #cbd5e1;
+    line-height: 1.65;
+}
+
+.detail-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: #cbd5e1;
+    margin-top: 10px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.meta-rating {
+    color: #f59e0b;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Floating Enrolment Card Right Side */
+.enroll-card-floating {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 24px;
+    color: #0f172a;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    align-self: flex-start;
+    transition: transform 0.3s ease;
+}
+
+.enroll-preview-img-container {
+    width: 100%;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+    background: linear-gradient(135deg, #1e1b4b, #312e81);
+}
+
+.enroll-preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.enroll-card-floating:hover .enroll-preview-img {
+    transform: scale(1.05);
+}
+
+.price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.price-row .current-price {
+    font-size: 38px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.price-row .original-price {
+    font-size: 18px;
+    color: #94a3b8;
+    text-decoration: line-through;
+}
+
+.price-row .discount-badge {
+    background: #dcfce7;
+    color: #15803d;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.enroll-action-btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #6366f1, #2563eb);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.enroll-action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(37, 99, 235, 0.45);
+}
+
+.enrolled-success-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+.guarantee-tag {
+    text-align: center;
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.enroll-includes-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.enroll-includes-list li {
+    font-size: 13px;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.outcome-icon-blue {
+    color: #2563eb;
+}
+
+/* Main Content Grid */
+.detail-main-layout {
+    max-width: 1250px;
+    margin: 40px auto 0 auto;
+    padding: 0 6%;
+    display: grid;
+    grid-template-columns: 1.8fr 1.2fr;
+    gap: 40px;
+}
+
+.detail-left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* What You Will Learn Box */
+.outcomes-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.outcomes-box h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.outcomes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.outcome-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.55;
+    background: #f8fafc;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid #f1f5f9;
+    transition: all 0.25s ease;
+}
+
+.outcome-item:hover {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    transform: translateY(-2px);
+}
+
+.outcome-icon {
+    color: #10b981;
+    font-size: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* Premium Animated Syllabus Accordion */
+.syllabus-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.syllabus-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.syllabus-header-row h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.syllabus-stats-pills {
+    display: flex;
+    gap: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.syllabus-stats-pills span {
+    background: #f1f5f9;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.chapter-card-animated {
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: #ffffff;
+}
+
+.chapter-card-animated.expanded {
+    border-color: #6366f1;
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.08);
+}
+
+.chapter-header-btn {
+    width: 100%;
+    padding: 18px 24px;
+    background: #f8fafc;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background 0.25s ease;
+    text-align: left;
+}
+
+.chapter-header-btn:hover {
+    background: #f1f5f9;
+}
+
+.chapter-card-animated.expanded .chapter-header-btn {
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+}
+
+.chapter-title-side {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.chapter-number-badge {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1, #2563eb);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.chapter-title-side h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.chapter-meta-side {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.chevron-icon {
+    transition: transform 0.3s ease;
+    color: #6366f1;
+}
+
+.chapter-card-animated.expanded .chevron-icon {
+    transform: rotate(180deg);
+}
+
+.lessons-list-animated {
+    padding: 12px 24px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.lesson-item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid #f1f5f9;
+    transition: all 0.2s ease;
+}
+
+.lesson-item-row:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.lesson-title-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.lesson-icon-type {
+    color: #2563eb;
+    font-size: 14px;
+}
+
+.lesson-badges {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.preview-pill {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2563eb;
+    background: #eff6ff;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid #bfdbfe;
+}
+
+.lesson-duration {
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* Reviews Section */
+.reviews-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 32px;
+}
+
+.reviews-summary {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.big-rating {
+    text-align: center;
+}
+
+.big-rating h3 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1;
+}
+
+.big-rating-stars {
+    color: #f59e0b;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    margin: 8px 0;
+}
+
+.big-rating p {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+}
+
+.rating-bars {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.bar-bg {
+    flex: 1;
+    height: 8px;
+    background: #f1f5f9;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: #f59e0b;
+    border-radius: 10px;
+}
+
+/* Right Sidebar Widgets */
+.detail-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.sidebar-widget-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.widget-heading {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.instructor-profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.instructor-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1, #2563eb);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.instructor-info h4 {
+    font-size: 17px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.instructor-info p {
+    font-size: 13px;
+    color: #6366f1;
+    font-weight: 600;
+    margin: 0;
+}
+
+.instructor-bio {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.prereq-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.prereq-list li {
+    font-size: 13px;
+    color: #334155;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+}
+
+.bullet-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #6366f1;
+    margin-top: 6px;
+    flex-shrink: 0;
+}
+
+.cert-preview-box {
+    background: linear-gradient(135deg, #0f172a, #1e1b4b);
+    border-radius: 16px;
+    padding: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.cert-preview-box h4 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.cert-preview-box p {
+    font-size: 12px;
+    color: #94a3b8;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 992px) {
+    .detail-hero-container {
+        grid-template-columns: 1fr;
+    }
+    .detail-main-layout {
+        grid-template-columns: 1fr;
+    }
+    .outcomes-grid {
+        grid-template-columns: 1fr;
+    }
+}

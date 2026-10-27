@@ -1,0 +1,83 @@
+.roadmap-section {
+    padding: 80px 6%;
+    background: #f8fafc;
+    position: relative;
+    overflow: hidden;
+}
+
+.roadmap-timeline {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    position: relative;
+}
+
+.roadmap-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 28px 20px;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.roadmap-card:hover {
+    transform: translateY(-6px);
+    border-color: #6366f1;
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.12);
+}
+
+.step-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #6366f1, #2563eb);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.roadmap-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.roadmap-card p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.roadmap-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.skill-tag {
+    font-size: 11px;
+    font-weight: 600;
+    background: #f1f5f9;
+    color: #475569;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+@media (max-width: 992px) {
+    .roadmap-timeline {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .roadmap-timeline {
+        grid-template-columns: 1fr;
+    }
+}

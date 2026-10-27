@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Click Ripple Animation */
+.ripple-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(99, 102, 241, 0.35);
+    transform: scale(0);
+    animation: rippleWave 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes rippleWave {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
