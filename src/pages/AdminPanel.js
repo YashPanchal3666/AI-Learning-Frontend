@@ -13,7 +13,7 @@ import {
     FaBell, FaUserCog, FaSync, FaSignOutAlt
 } from 'react-icons/fa';
 
-const API_BASE_URL = ' https://ai-learning-backend-o3m1.onrender.com/api';
+const API_BASE_URL = 'https://ai-learning-backend-o3m1.onrender.com/api';
 
 const AdminPanel = () => {
     const navigate = useNavigate();

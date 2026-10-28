@@ -101,12 +101,12 @@ const Login = () => {
             // ==========================================
 
             const response = await axios.post(
-                " https://ai-learning-backend-o3m1.onrender.com/api/login",
-                {
-                    email: formData.email,
-                    password: formData.password
-                }
-            );
+  "https://ai-learning-backend-o3m1.onrender.com/api/login",
+  {
+    email: formData.email,
+    password: formData.password
+  }
+);
 
 
             console.log(
@@ -277,8 +277,8 @@ const Login = () => {
 
     
 const handleGoogleLogin = () => {
-    window.location.href =
-        "https://ai-learning-backend-o3m1.onrender.com/api/auth/google";
+  window.location.href =
+    "https://ai-learning-backend-o3m1.onrender.com/api/auth/google";
 };
 
 

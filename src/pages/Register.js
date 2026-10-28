@@ -50,7 +50,7 @@ const Register = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/adduser', {
+      const response = await fetch('https://ai-learning-backend-o3m1.onrender.com/api/adduser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
